@@ -33,137 +33,217 @@
             border-radius: 8px;
             margin-bottom: 20px;
         }
+        .section-box h3 {
+            font-size: 1.1rem;
+            text-align: left;
+            border-bottom: 2px solid #cbd5e1;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+        .grid-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        @media (max-width: 600px) {
+            .grid-form {
+                grid-template-columns: 1fr;
+            }
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
         label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
+            font-size: 0.88rem;
+            font-weight: 600;
+            margin-bottom: 5px;
             color: #374151;
         }
         input, select {
-            width: 100%;
             padding: 10px;
-            margin-bottom: 15px;
             border: 1px solid #d1d5db;
             border-radius: 6px;
-            box-sizing: border-box;
-            font-size: 14px;
+            font-size: 0.95rem;
         }
-        button {
-            background-color: #2563eb;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-            width: 100%;
-            transition: background 0.2s;
-            margin-top: 5px;
+        input:focus, select:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
         }
-        button:hover {
-            background-color: #1d4ed8;
-        }
-        .btn-success {
-            background-color: #16a34a;
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             margin-top: 10px;
         }
-        .btn-success:hover {
-            background-color: #15803d;
+        .checkbox-group input {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        button {
+            background-color: #1e3a8a;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background-color: #1e40af;
+        }
+        button.btn-secondary {
+            background-color: #059669;
+        }
+        button.btn-secondary:hover {
+            background-color: #047857;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 15px;
-            margin-bottom: 20px;
+            margin-top: 20px;
+            font-size: 0.9rem;
         }
         th, td {
-            border: 1px solid #e5e7eb;
-            padding: 10px;
+            padding: 10px 12px;
             text-align: center;
-            font-size: 14px;
+            border: 1px solid #e5e7eb;
         }
         th {
-            background-color: #eff6ff;
-            color: #1e3a8a;
+            background-color: #1e3a8a;
+            color: white;
+            font-weight: 600;
         }
         tr:nth-child(even) {
-            background-color: #f9fafb;
+            background-color: #eff6ff;
         }
         .summary-box {
-            background-color: #eff6ff;
-            border: 1px solid #bfdbfe;
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
             padding: 15px;
-            border-radius: 6px;
-            margin-top: 15px;
-        }
-        .summary-box p {
-            margin: 5px 0;
-            font-size: 15px;
-        }
-        
-        /* Contrato y Pagaré */
-        #documentoContainer {
-            display: none;
-            margin-top: 30px;
-            border: 2px dashed #cbd5e1;
-            padding: 25px;
-            background: #ffffff;
             border-radius: 8px;
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            text-align: center;
         }
-        .legal-text {
-            font-size: 13px;
-            line-height: 1.6;
-            text-align: justify;
+        .summary-item h4 {
+            margin: 0;
+            font-size: 0.85rem;
+            color: #166534;
+        }
+        .summary-item p {
+            margin: 5px 0 0 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #15803d;
+        }
+        #documentoContainer {
+            margin-top: 30px;
+            padding: 25px;
+            border: 2px dashed #93c5fd;
+            border-radius: 8px;
+            background-color: #ffffff;
+            display: none;
+        }
+        .pagare-section {
+            border: 2px solid #1e3a8a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            background-color: #f0f9ff;
         }
         .signatures-area {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             margin-top: 50px;
-            page-break-inside: avoid;
+            gap: 20px;
         }
         .signature-box {
-            width: 42%;
             text-align: center;
+            width: 45%;
         }
-        .signature-line {
-            border-top: 1px solid #000;
-            margin-top: 40px;
-            padding-top: 5px;
-            font-size: 13px;
-        }
-        .digital-sig {
-            font-family: 'Caveat', cursive;
-            font-size: 26px;
-            color: #1e3a8a;
-            height: 40px;
+        .signature-img-container {
+            height: 50px;
             display: flex;
             align-items: flex-end;
             justify-content: center;
+            margin-bottom: 5px;
+        }
+        .signature-text-fallback {
+            font-family: 'Caveat', cursive;
+            font-size: 1.8rem;
+            color: #1e3a8a;
+            line-height: 1;
+        }
+        .signature-line {
+            border-top: 1px solid #1f2937;
+            margin-top: 5px;
+            padding-top: 8px;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+        #canvasFirma {
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            background: #fff;
+            cursor: crosshair;
+            touch-action: none;
+        }
+        .canvas-container {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .btn-clear {
+            background-color: #dc2626;
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            margin-top: 5px;
+        }
+        .btn-clear:hover {
+            background-color: #b91c1c;
         }
 
-        /* CONFIGURACIÓN ESTRICTA PARA IMPRESIÓN/PDF */
+        /* CONFIGURACIÓN ESTRICTA PARA ELIMINAR URL Y HEADERS EN IMPRESIÓN/PDF */
         @media print {
             @page {
                 size: letter;
                 margin: 0mm;
             }
-            body {
-                background: white !important;
-                margin: 0 !important;
-                padding: 0 !important;
+            body { 
+                background: white !important; 
+                margin: 0 !important; 
+                padding: 0 !important; 
             }
-            .container > *:not(#documentoContainer) {
-                display: none !important;
-            }
-            #documentoContainer {
-                display: block !important;
-                border: none !important;
-                box-shadow: none !important;
+            .container { 
+                box-shadow: none !important; 
+                padding: 10mm !important; 
+                max-width: 100% !important; 
                 margin: 0 !important;
-                padding: 15mm !important;
-                width: 100% !important;
-                box-sizing: border-box;
+            }
+            .section-box, .btn-group, .canvas-container, hr, h1 { 
+                display: none !important; 
+            }
+            #documentoContainer { 
+                display: block !important; 
+                border: none !important; 
+                padding: 0 !important; 
+                margin: 0 !important;
             }
         }
     </style>
@@ -171,183 +251,296 @@
 <body>
 
 <div class="container">
-    <h1>Calculadora de Préstamos y Pagaré</h1>
-
+    <h1>Calculadora de Préstamos</h1>
+    
     <div class="section-box">
-        <h3>Datos del Préstamo</h3>
-        <label for="deudor">Nombre del Deudor (A quien se le presta):</label>
-        <input type="text" id="deudor" placeholder="Ej. Juan Pérez">
-
-        <label for="acreedor">Nombre del Acreedor (Tú):</label>
-        <input type="text" id="acreedor" placeholder="Ej. Carlos Gómez">
-
-        <label for="monto">Monto del Préstamo ($):</label>
-        <input type="number" id="monto" value="5000" min="1">
-
-        <label for="plazo">Plazo (Semanas):</label>
-        <input type="number" id="plazo" value="12" min="1">
-
-        <label for="interes">Tasa de Interés Total sobre el Capital (%):</label>
-        <input type="number" id="interes" value="15" step="0.1">
-
-        <label for="mora">Interés Moratorio Diario ($ por día de atraso):</label>
-        <input type="number" id="mora" value="10">
-
-        <label for="fecha">Fecha de Inicio:</label>
-        <input type="date" id="fecha">
-
-        <button onclick="calcular()">Calcular Préstamo</button>
-    </div>
-
-    <div id="resultadoContainer" style="display:none;">
-        <div class="section-box">
-            <h3>Desglose de Pagos</h3>
-            <div id="resumenValores" class="summary-box"></div>
-            
-            <div style="overflow-x:auto;">
-                <table id="tablaPagos">
-                    <thead>
-                        <tr>
-                            <th>Pago #</th>
-                            <th>Fecha Estimada</th>
-                            <th>Capital</th>
-                            <th>Interés</th>
-                            <th>Pago Semanal</th>
-                        </tr>
-                    </thead>
-                    <tbody id="cuerpoTabla"></tbody>
-                </table>
+        <h3>1. Condiciones Financieras</h3>
+        <div class="grid-form">
+            <div class="form-group">
+                <label>Monto del Préstamo ($):</label>
+                <input type="number" id="monto" value="1500" oninput="calcular()">
             </div>
-
-            <button onclick="generarAcuerdo()" class="btn-success">Generar Acuerdo de Mutuo y Pagaré</button>
-            <button onclick="guardarEnGoogleSheets()" style="background-color: #0d9488; margin-top: 10px;">Guardar Préstamo en Google Sheets</button>
+            <div class="form-group">
+                <label>Tasa de Interés Ordinaria (%):</label>
+                <input type="number" id="interes" value="4" step="0.1" oninput="calcular()">
+            </div>
+            <div class="form-group">
+                <label>Plazo (Número de Pagos):</label>
+                <input type="number" id="plazo" value="3" oninput="calcular()">
+            </div>
+            <div class="form-group">
+                <label>Frecuencia de Pagos:</label>
+                <select id="frecuencia" onchange="calcular()">
+                    <option value="7">Semanal (7 días)</option>
+                    <option value="15">Quincenal (15 días)</option>
+                    <option value="30">Mensual (30 días)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Fecha de Primer Pago / Inicio:</label>
+                <input type="date" id="fechaInicio" onchange="calcular()">
+            </div>
+            <div class="form-group">
+                <label>Interés Moratorio Diario ($):</label>
+                <input type="number" id="moraDiaria" value="5" oninput="calcular()">
+            </div>
+            <div class="form-group full-width">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="cobrarIva" onchange="calcular()">
+                    <label for="cobrarIva" style="margin-bottom:0; cursor:pointer;">Aplicar IVA (16%) sobre los intereses ordinarios</label>
+                </div>
+            </div>
         </div>
     </div>
 
+    <div class="section-box">
+        <h3>2. Datos de las Partes y Cuentas</h3>
+        <div class="grid-form">
+            <div class="form-group">
+                <label>Nombre del Acreedor:</label>
+                <input type="text" id="nombreAcreedor" placeholder="Tu Nombre Completo">
+            </div>
+            <div class="form-group">
+                <label>Cuenta Origen (De donde sale el dinero):</label>
+                <input type="text" id="cuentaOrigen" placeholder="Banco y Cuenta/CLABE de salida">
+            </div>
+            <div class="form-group">
+                <label>Nombre del Deudor:</label>
+                <input type="text" id="nombreDeudor" placeholder="Nombre de tu Amigo">
+            </div>
+            <div class="form-group">
+                <label>Cuenta Destino (A donde llegará el dinero):</label>
+                <input type="text" id="cuentaDestino" placeholder="Banco y Cuenta/CLABE de depósito">
+            </div>
+        </div>
+    </div>
+
+    <div class="btn-group">
+        <button onclick="calcular()">🔄 Calcular Préstamo</button>
+        <button class="btn-secondary" onclick="generarAcuerdo()">📄 Generar Acuerdo y Pagaré</button>
+    </div>
+
+    <div class="summary-box" id="resumenBox">
+        <div class="summary-item">
+            <h4>Capital Prestado</h4>
+            <p id="sumMonto">$0.00</p>
+        </div>
+        <div class="summary-item">
+            <h4>Interés Total</h4>
+            <p id="sumInteres">$0.00</p>
+        </div>
+        <div class="summary-item" id="boxIvaContainer">
+            <h4>IVA sobre Interés</h4>
+            <p id="sumIva">$0.00</p>
+        </div>
+        <div class="summary-item">
+            <h4>Total a Liquidar</h4>
+            <p id="sumTotal">$0.00</p>
+        </div>
+        <div class="summary-item">
+            <h4>Pago por Periodo</h4>
+            <p id="sumCuota">$0.00</p>
+        </div>
+    </div>
+
+    <div style="overflow-x:auto;">
+        <table id="tablaPrestamo">
+            <thead>
+                <tr>
+                    <th>N° Pago</th>
+                    <th>Fecha Límite</th>
+                    <th>Capital ($)</th>
+                    <th>Interés ($)</th>
+                    <th id="thIvaCol">IVA ($)</th>
+                    <th>Cuota Total ($)</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+    </div>
+
     <div id="documentoContainer">
-        <div id="textoAcuerdo"></div>
-        <div style="text-align: center; margin-top: 30px;" class="no-print">
-            <button onclick="window.print()" style="background-color: #4f46e5; width: auto; padding: 10px 30px;">Imprimir / Guardar como PDF</button>
+        <h2>CONTRATO DE MUTUO CON INTERÉS Y PAGARÉ</h2>
+        <div id="textoAcuerdo" style="line-height: 1.6; font-size: 0.95rem;">
+            </div>
+
+        <div class="canvas-container">
+            <label><strong>Firma Digital del Acreedor (Opcional: Dibuja dentro del recuadro o déjalo en blanco para usar tu nombre en tipografía de firma):</strong></label><br>
+            <canvas id="canvasFirma" width="300" height="120"></canvas><br>
+            <button class="btn-clear" onclick="limpiarFirma()">Borrar Firma</button>
+        </div>
+
+        <div class="btn-group" style="margin-top: 30px;">
+            <button class="btn-secondary" onclick="window.print()">🖨️ Imprimir / Guardar en PDF</button>
+            <button id="btnGuardarBD" style="background-color: #0284c7;" onclick="guardarEnBD()">💾 Guardar en Base de Datos</button>
         </div>
     </div>
 </div>
 
 <script>
-    // Asignar fecha actual por defecto
-    document.getElementById('fecha').valueAsDate = new Date();
+    // Inicializar fecha actual por defecto
+    document.getElementById('fechaInicio').valueAsDate = new Date();
 
-    let datosGlobales = {};
+    // Configuración del Canvas de Firma
+    const canvas = document.getElementById('canvasFirma');
+    const ctx = canvas.getContext('2d');
+    let dibujando = false;
+    let tieneFirmaDibujada = false;
+
+    function iniciarTrazo(e) {
+        dibujando = true;
+        tieneFirmaDibujada = true;
+        ctx.beginPath();
+        const rect = canvas.getBoundingClientRect();
+        const x = (e.clientX || e.touches[0].clientX) - rect.left;
+        const y = (e.clientY || e.touches[0].clientY) - rect.top;
+        ctx.moveTo(x, y);
+    }
+
+    function dibujar(e) {
+        if (!dibujando) return;
+        const rect = canvas.getBoundingClientRect();
+        const x = (e.clientX || e.touches[0].clientX) - rect.left;
+        const y = (e.clientY || e.touches[0].clientY) - rect.top;
+        ctx.lineTo(x, y);
+        ctx.stroke();
+    }
+
+    function cerrarTrazo() {
+        dibujando = false;
+    }
+
+    canvas.addEventListener('mousedown', iniciarTrazo);
+    canvas.addEventListener('mousemove', dibujar);
+    canvas.addEventListener('mouseup', cerrarTrazo);
+    canvas.addEventListener('touchstart', iniciarTrazo);
+    canvas.addEventListener('touchmove', dibujar);
+    canvas.addEventListener('touchend', cerrarTrazo);
+
+    function limpiarFirma() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        tieneFirmaDibujada = false;
+    }
 
     function calcular() {
-        const deudor = document.getElementById('deudor').value.trim() || "EL DEUDOR";
-        const acreedor = document.getElementById('acreedor').value.trim() || "EL ACREEDOR";
         const monto = parseFloat(document.getElementById('monto').value) || 0;
+        const tasa = parseFloat(document.getElementById('interes').value) || 0;
         const plazo = parseInt(document.getElementById('plazo').value) || 1;
-        const tasaInteresTotal = parseFloat(document.getElementById('interes').value) || 0;
-        const mora = parseFloat(document.getElementById('mora').value) || 0;
-        const fechaInicioVal = document.getElementById('fecha').value;
+        const frecuencia = parseInt(document.getElementById('frecuencia').value) || 7;
+        const fechaInicioVal = document.getElementById('fechaInicio').value;
+        const aplicarIva = document.getElementById('cobrarIva').checked;
 
-        if (monto <= 0 || plazo <= 0) {
-            alert("Por favor, ingresa un monto y un plazo válidos.");
-            return;
+        // Mostrar u ocultar columna de IVA según el checkbox
+        const thIva = document.getElementById('thIvaCol');
+        const boxIva = document.getElementById('boxIvaContainer');
+        if (aplicarIva) {
+            thIva.style.display = '';
+            boxIva.style.display = '';
+        } else {
+            thIva.style.display = 'none';
+            boxIva.style.display = 'none';
         }
 
-        const interesTotalMonto = monto * (tasaInteresTotal / 100);
-        const totalPagar = monto + interesTotalMonto;
-        
-        const capitalSemanal = monto / plazo;
-        const interesSemanal = interesTotalMonto / plazo;
-        const pagoSemanal = totalPagar / plazo;
+        // Cálculos generales
+        const interesTotal = monto * (tasa / 100) * plazo;
+        const ivaTotal = aplicarIva ? interesTotal * 0.16 : 0;
+        const totalPagar = monto + interesTotal + ivaTotal;
 
-        let cuerpoTabla = "";
+        const capitalCuota = monto / plazo;
+        const interesCuota = interesTotal / plazo;
+        const ivaCuota = ivaTotal / plazo;
+        const cuotaTotal = capitalCuota + interesCuota + ivaCuota;
+
+        // Actualizar resumen en pantalla
+        document.getElementById('sumMonto').innerText = '$' + monto.toFixed(2);
+        document.getElementById('sumInteres').innerText = '$' + interesTotal.toFixed(2);
+        document.getElementById('sumIva').innerText = '$' + ivaTotal.toFixed(2);
+        document.getElementById('sumTotal').innerText = '$' + totalPagar.toFixed(2);
+        document.getElementById('sumCuota').innerText = '$' + cuotaTotal.toFixed(2);
+
+        // Generar filas de la tabla
+        const tbody = document.querySelector('#tablaPrestamo tbody');
+        tbody.innerHTML = '';
+
         let fechaBase = fechaInicioVal ? new Date(fechaInicioVal + 'T00:00:00') : new Date();
 
         for (let i = 1; i <= plazo; i++) {
-            fechaBase.setDate(fechaBase.getDate() + 7);
-            const fechaStr = fechaBase.toLocaleDateString('es-MX', { year: 'numeric', month: '2-digit', day: '2-digit' });
+            let fechaPago = new Date(fechaBase);
+            fechaPago.setDate(fechaBase.getDate() + (frecuencia * (i - 1)));
+            let fechaStr = fechaPago.toLocaleDateString('es-MX');
 
-            cuerpoTabla += `
-                <tr>
-                    <td>${i}</td>
-                    <td>${fechaStr}</td>
-                    <td>$${capitalSemanal.toFixed(2)}</td>
-                    <td>$${interesSemanal.toFixed(2)}</td>
-                    <td><strong>$${pagoSemanal.toFixed(2)}</strong></td>
-                </tr>
-            `;
+            let fila = `<tr>
+                <td>${i}</td>
+                <td>${fechaStr}</td>
+                <td>$${capitalCuota.toFixed(2)}</td>
+                <td>$${interesCuota.toFixed(2)}</td>`;
+            
+            if (aplicarIva) {
+                fila += `<td>$${ivaCuota.toFixed(2)}</td>`;
+            }
+            
+            fila += `<td>$${cuotaTotal.toFixed(2)}</td></tr>`;
+            tbody.innerHTML += fila;
         }
 
-        document.getElementById('cuerpoTabla').innerHTML = cuerpoTabla;
-        
-        document.getElementById('resumenValores').innerHTML = `
-            <p><strong>Monto Prestado:</strong> $${monto.toFixed(2)} MXN</p>
-            <p><strong>Interés Total (${tasaInteresTotal}%):</strong> $${interesTotalMonto.toFixed(2)} MXN</p>
-            <p><strong>Total a Pagar:</strong> $${totalPagar.toFixed(2)} MXN</p>
-            <p><strong>Pago Semanal Fijo:</strong> $${pagoSemanal.toFixed(2)} MXN</p>
-        `;
-
-        document.getElementById('resultadoContainer').style.display = 'block';
-
-        // Guardar para uso del contrato y base de datos
-        datosGlobales = {
-            deudor,
-            acreedor,
-            monto,
-            plazo,
-            tasaInteresTotal,
-            interesTotalMonto,
-            totalPagar,
-            pagoSemanal,
-            mora,
-            fechaInicio: fechaInicioVal
-        };
+        return { monto, interesTotal, ivaTotal, totalPagar, cuotaTotal, aplicarIva };
     }
 
     function generarAcuerdo() {
-        const d = datosGlobales;
-        if (!d.monto) {
-            calcular();
+        const datos = calcular();
+        const acreedor = document.getElementById('nombreAcreedor').value || "[Nombre del Acreedor]";
+        const cuentaOrigen = document.getElementById('cuentaOrigen').value || "[Cuenta de Origen]";
+        const deudor = document.getElementById('nombreDeudor').value || "[Nombre del Deudor]";
+        const cuentaDestino = document.getElementById('cuentaDestino').value || "[Cuenta de Destino]";
+        const mora = document.getElementById('moraDiaria').value || "5";
+        const plazo = document.getElementById('plazo').value;
+
+        // Para el acreedor: usa el canvas si dibujó, o su nombre en tipografía de firma si lo dejó en blanco
+        let htmlFirmaAcreedor = `<div class="signature-img-container"><span class="signature-text-fallback">${acreedor}</span></div>`;
+        if (tieneFirmaDibujada) {
+            const dataUrl = canvas.toDataURL();
+            htmlFirmaAcreedor = `<div class="signature-img-container"><img src="${dataUrl}" alt="Firma" style="max-height: 45px;"></div>`;
         }
 
-        const fechaActual = new Date().toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' });
-        
-        const htmlFirmaAcreedor = `<div class="digital-sig">${d.acreedor}</div>`;
-        const htmlFirmaDeudor = `<div class="digital-sig">${d.deudor}</div>`;
+        // Para el deudor: el espacio se deja en blanco arriba de su línea para firma física manuscrita
+        let htmlFirmaDeudor = `<div class="signature-img-container" style="height: 50px;"></div>`;
 
-        const htmlContrato = `
-            <h2>CONTRATO DE MUTUO CON INTERÉS Y PAGARÉ</h2>
-            <p style="text-align: right; font-size: 12px;">Fecha de emisión: ${fechaActual}</p>
+        let textoIvaClausula = datos.aplicarIva ? ` más el 16% correspondiente al Impuesto al Valor Agregado (IVA), dando un total de $${datos.ivaTotal.toFixed(2)} por concepto de IVA.` : ` (Sin cobro de IVA aplicado).`;
+
+        let htmlContrato = `
+            <p><strong>CONTRATO DE MUTUO CON INTERÉS</strong> que celebran por una parte <strong>${acreedor}</strong> (quien provee los fondos desde la cuenta de origen: <strong>${cuentaOrigen}</strong>), a quien en lo sucesivo se le denominará <strong>"EL ACREEDOR"</strong>, y por otra parte <strong>${deudor}</strong> (quien recibirá los recursos en la cuenta de destino: <strong>${cuentaDestino}</strong>), a quien se le denominará <strong>"EL DEUDOR"</strong>, al tenor de las siguientes declaraciones y cláusulas:</p>
             
-            <div class="legal-text">
-                <p><strong>DECLARACIONES Y CLÁUSULAS:</strong></p>
-                <p>1. El C. <strong>${d.acreedor}</strong> (en lo sucesivo "EL ACREEDOR") otorga en este acto un préstamo en efectivo bajo la modalidad de Mutuo con Interés por la cantidad de <strong>$${d.monto.toFixed(2)} MXN</strong> al C. <strong>${d.deudor}</strong> (en lo sucesivo "EL DEUDOR").</p>
-                
-                <p>2. "EL DEUDOR" se compromete formalmente a restituir dicha cantidad mediante <strong>${d.plazo} pagos semanales consecutivos</strong> de <strong>$${d.pagoSemanal.toFixed(2)} MXN</strong> cada uno, los cuales ya incluyen el rendimiento pactado por un interés total del ${d.tasaInteresTotal}%, dando un total global a liquidar de <strong>$${d.totalPagar.toFixed(2)} MXN</strong>.</p>
-                
-                <p>3. <strong>PENA CONVENCIONAL / MORA:</strong> En caso de retraso en cualquiera de los pagos semanales establecidos, "EL DEUDOR" pagará a "EL ACREEDOR" un interés moratorio diario de <strong>$${d.mora} MXN</strong> por cada día natural de atraso, de conformidad con lo estipulado entre las partes.</p>
-                
-                <hr style="border: 0; border-top: 1px solid #ccc; margin: 20px 0;">
-                
-                <h3 style="text-align: center; margin-bottom: 5px;">PAGARÉ</h3>
-                <p style="text-align: center; font-size: 12px;">Buena por: $${d.totalPagar.toFixed(2)} MXN</p>
-                
-                <p>Por este Pagaré, "EL DEUDOR" <strong>${d.deudor}</strong> promete pagar incondicionalmente a la orden de <strong>${d.acreedor}</strong>, el día de vencimiento final, la cantidad total de <strong>$${d.totalPagar.toFixed(2)} MXN</strong>.</p>
-                
-                <p>Este pagaré causa un interés moratorio a razón de <strong>$${d.mora} MXN diarios</strong> en caso de mora. Este documento forma parte de un Contrato de Mutuo y su cumplimiento es exigible legalmente.</p>
+            <h3>DECLARACIONES</h3>
+            <p><strong>PRIMERA:</strong> Declara "EL ACREEDOR" contar con la capacidad legal y los recursos económicos suficientes para otorgar en mutuo la cantidad de <strong>$${datos.monto.toFixed(2)} MXN</strong>.</p>
+            <p><strong>SEGUNDA:</strong> Declara "EL DEUDOR" que recibe dicha cantidad a su entera satisfacción, obligándose a restituirla en los plazos y términos establecidos en este instrumento.</p>
+
+            <h3>CLÁUSULAS</h3>
+            <p><strong>PRIMERA (DEL MONTO Y OBJETO):</strong> "EL ACREEDOR" otorga a "EL DEUDOR" un préstamo por la cantidad neta de <strong>$${datos.monto.toFixed(2)} MXN</strong>.</p>
+            <p><strong>SEGUNDA (DE LOS INTERESES):</strong> El presente préstamo causará un interés ordinario pactado, generando un total de intereses por <strong>$${datos.interesTotal.toFixed(2)} MXN</strong>${textoIvaClausula}</p>
+            <p><strong>TERCERA (DE LA FORMA DE PAGO):</strong> "EL DEUDOR" se obliga a liquidar el préstamo en <strong>${plazo} pagos periódicos</strong> por un monto de <strong>$${datos.cuotaTotal.toFixed(2)} MXN</strong> cada uno, de acuerdo con el calendario establecido en la tabla de amortización de la calculadora.</p>
+            <p><strong>CUARTA (DE LOS INTERESES MORATORIOS):</strong> En caso de retraso en cualquiera de los pagos establecidos, "EL DEUDOR" pagará un interés moratorio diario de <strong>$${mora} MXN</strong> por cada día natural de atraso hasta la liquidación total del saldo vencido.</p>
+            
+            <p><strong>Fecha de firma:</strong> ${new Date().toLocaleDateString('es-MX')}.</p>
+
+            <div class="pagare-section">
+                <h3 style="text-align: center; color: #1e3a8a;">PAGARÉ</h3>
+                <p>Por este Pagaré, "EL DEUDOR" <strong>${deudor}</strong> promete pagar incondicionalmente a la orden de <strong>${acreedor}</strong>, el día de vencimiento final, la cantidad total de <strong>$${datos.totalPagar.toFixed(2)} MXN</strong>.</p>
+                <p>Este pagaré causa un interés moratorio a razón de <strong>$${mora} MXN diarios</strong> en caso de mora. Este documento forma parte de un Contrato de Mutuo y su cumplimiento es exigible legalmente.</p>
             </div>
 
             <div class="signatures-area">
                 <div class="signature-box">
                     ${htmlFirmaAcreedor}
                     <div class="signature-line">
-                        <strong>${d.acreedor}</strong><br>
+                        <strong>${acreedor}</strong><br>
                         EL ACREEDOR
                     </div>
                 </div>
                 <div class="signature-box">
                     ${htmlFirmaDeudor}
                     <div class="signature-line">
-                        <strong>${d.deudor}</strong><br>
+                        <strong>${deudor}</strong><br>
                         EL DEUDOR
                     </div>
                 </div>
@@ -359,43 +552,45 @@
         document.getElementById('documentoContainer').scrollIntoView({ behavior: 'smooth' });
     }
 
-    function guardarEnGoogleSheets() {
-        const d = datosGlobales;
-        if (!d.monto) {
-            calcular();
-        }
+    // --- NUEVA FUNCIÓN PARA GUARDAR EN GOOGLE SHEETS ---
+    function guardarEnBD() {
+        const btn = document.getElementById('btnGuardarBD');
+        btn.innerText = "⏳ Guardando...";
 
-        const urlWebApps = "https://script.google.com/macros/s/AKfycbx6Sc1OYW5_Psc0yGrH9aAcZwHOHaHFrva58d8KcVf1pDcloJC8nqXt7_iD-EiAaL2_6w/exec";
+        const datos = calcular();
+        const deudor = document.getElementById('nombreDeudor').value || "Sin Nombre";
+        const fechaInicioVal = document.getElementById('fechaInicio').value || new Date().toLocaleDateString('es-MX');
+        
+        // Genera un folio único para el préstamo
+        const folioPrestamo = "PR-" + Math.floor(1000 + Math.random() * 9000);
 
-        const datosEnvio = {
-            deudor: d.deudor,
-            acreedor: d.acreedor,
-            monto: d.monto,
-            plazo: d.plazo,
-            interesTotal: d.interesTotalMonto,
-            totalPagar: d.totalPagar,
-            pagoSemanal: d.pagoSemanal,
-            fechaInicio: d.fechaInicio
+        const payload = {
+            idPréstamo: folioPrestamo,
+            deudor: deudor,
+            montoTotal: datos.totalPagar.toFixed(2),
+            fechaInicio: fechaInicioVal,
+            estado: 'Registrado'
         };
 
-        fetch(urlWebApps, {
+        fetch("https://script.google.com/macros/s/AKfycbx6Sc1OYW5_Psc0yGrH9aAcZwHOHaHFrva58d8KcVf1pDcloJC8nqXt7_iD-EiAaL2_6w/exec", {
             method: "POST",
             mode: "no-cors",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "text/plain"
             },
-            body: JSON.stringify(datosEnvio)
-        })
-        .then(() => {
-            alert("¡Préstamo guardado exitosamente en tu Google Sheets!");
-        })
-        .catch(error => {
-            console.error("Error:", error);
-            alert("Hubo un error al intentar guardar en Google Sheets.");
+            body: JSON.stringify(payload)
+        }).then(() => {
+            alert("✅ ¡Préstamo guardado exitosamente en tu Google Sheets!");
+            btn.innerText = "✅ Guardado en BD";
+            btn.style.backgroundColor = "#059669"; // Color verde de éxito
+        }).catch(error => {
+            console.error("Error al guardar en BD:", error);
+            alert("❌ Hubo un error al guardar en la base de datos.");
+            btn.innerText = "💾 Reintentar Guardar";
         });
     }
 
-    // Ejecutar cálculo inicial
+    // Ejecutar cálculo inicial al cargar la página
     calcular();
 </script>
 
